@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     MM IMPORTS - PÁGINA PRINCIPAL (index.html)
+     Este arquivo é a ESTRUTURA do site (textos, botões, seções).
+     O visual fica em style.css e o funcionamento em script.js.
+     Os três arquivos precisam ficar na mesma pasta.
+     ===================================================================== -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!-- Faz o site se ajustar à tela do celular -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Título que aparece na aba do navegador -->
+<title>MM Imports</title>
+<!-- Descrição que aparece no Google -->
+<meta name="description" content="MM Imports: linhas Juliet, Plantaris e Radar no Edifício Chater, Goiânia.">
+<!-- Favicon: ícone da aba do navegador (MM dourado em fundo preto) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23080808'/%3E%3Crect x='2' y='2' width='60' height='60' rx='6' fill='none' stroke='%23C9A44C' stroke-width='3'/%3E%3Cpath d='M12 46V20l10 16 10-16v26M36 46V20l10 16 10-16v26' fill='none' stroke='%23C9A44C' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- Fontes do Google (Cormorant Garamond para títulos, Inter para textos) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<!-- Liga o arquivo de visual -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CABEÇALHO (topo fixo do site) ================= -->
+<header>
+<div class="wrap bar">
+<!-- Nome da loja; clicar leva ao topo -->
+<a class="brand" href="#topo" aria-label="MM Imports">MM IMPORTS</a>
+
+<!-- Menu de navegação: cada link rola até a seção indicada -->
+<nav id="nav" aria-label="Principal">
+<a href="#catalogo">Catálogo</a>
+<a href="#juliet">Juliet</a>
+<a href="#plantaris">Plantaris</a>
+<a href="#radar">Radar</a>
+<a href="#loja">Loja e avaliações</a>
+</nav>
+
+<div class="tools">
+<!-- Botão do carrinho; o número (cnt) é atualizado pelo script.js -->
+<button class="ib" id="cartBtn" aria-label="Abrir carrinho"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6l2-8H7"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><span class="cnt" id="cnt">0</span></button>
+<!-- Botão do menu: só aparece no celular -->
+<button class="ib" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</div>
+</header>
+
+<main id="topo">
+
+<!-- ================= ÁREA INICIAL (primeira tela) ================= -->
+<section class="hero"><div class="wrap">
+<h1>Bem-vindo à <span>MM Imports</span></h1>
+<p>Conheça as linhas Juliet, Plantaris e Radar. Monte seu pedido e finalize direto pelo WhatsApp com a nossa equipe.</p>
+<div class="row"><a class="btn" href="#catalogo">Ver catálogo</a><a class="btn ghost" href="#loja">Como chegar</a></div>
+</div></section>
+
+<!-- ================= CATÁLOGO =================
+     COMO EDITAR UM PRODUTO (tudo aqui no HTML, sem mexer no JavaScript):
+       1) FOTO: coloque o arquivo na pasta "fotos" com o nome do src (ex.: fotos/juliet-01.jpg)
+          ou troque o caminho em src="..." para o nome do seu arquivo.
+       2) PREÇO: edite o texto dentro de <div class="pr">...</div> do produto.
+          Troque "Preço sob consulta" pelo valor, por exemplo: R$ 199,90
+          (pode escrever 199,90 ou R$ 199,90). O carrinho e o WhatsApp usam esse valor.
+          Se deixar "Preço sob consulta", o produto entra no carrinho com "valor a confirmar".
+       3) COR: data-cor="Preto". Para mais de uma cor: data-cor="Preto,Dourado".
+       4) DISPONIBILIDADE: data-estoque="sim" ou data-estoque="nao".
+       5) ESCONDER um produto: acrescente a palavra hidden no <article>.
+     Para criar um produto novo, copie um bloco <article> inteiro e mude o data-id
+     (único), o data-nome e o src da foto. -->
+<div id="catalogo"></div>
+<div id="secoes" class="wrap">
+
+<!-- ########## SEÇÃO JULIET: 23 espaços ########## -->
+<section class="cat" id="juliet">
+<div class="sh"><h2>Juliet</h2><span>23 espaços</span></div>
+<div class="grid">
+
+<!-- Produto: Juliet 01 -->
+<article class="card" data-id="juliet-01" data-nome="Juliet 01" data-cor="preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG" alt="Óculos Juliet 01" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 01</div>
+    <h3>Juliet 01</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 02 -->
+<article class="card" data-id="juliet-02" data-nome="Juliet 02" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE1.JPG" alt="Óculos Juliet 02" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 02</div>
+    <h3>Juliet 02</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 03 -->
+<article class="card" data-id="juliet-03" data-nome="Juliet 03" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG2.jpg" alt="Óculos Juliet 03" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 03</div>
+    <h3>Juliet 03</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 04 -->
+<article class="card" data-id="juliet-04" data-nome="Juliet 04" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG3.jpg" alt="Óculos Juliet 04" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 04</div>
+    <h3>Juliet 04</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 05 -->
+<article class="card" data-id="juliet-05" data-nome="Juliet 05" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG4.jpg" alt="Óculos Juliet 05" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 05</div>
+    <h3>Juliet 05</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 06 -->
+<article class="card" data-id="juliet-06" data-nome="Juliet 06" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG5.jpg" alt="Óculos Juliet 06" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 06</div>
+    <h3>Juliet 06</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 07 -->
+<article class="card" data-id="juliet-07" data-nome="Juliet 07" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG6.jpg" alt="Óculos Juliet 07" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 07</div>
+    <h3>Juliet 07</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 08 -->
+<article class="card" data-id="juliet-08" data-nome="Juliet 08" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG7.jpg" alt="Óculos Juliet 08" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 08</div>
+    <h3>Juliet 08</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 09 -->
+<article class="card" data-id="juliet-09" data-nome="Juliet 09" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG8.jpg" alt="Óculos Juliet 09" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 09</div>
+    <h3>Juliet 09</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 10 -->
+<article class="card" data-id="juliet-10" data-nome="Juliet 10" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG9.jpg" alt="Óculos Juliet 10" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 10</div>
+    <h3>Juliet 10</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 11 -->
+<article class="card" data-id="juliet-11" data-nome="Juliet 11" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG10.jpg" alt="Óculos Juliet 11" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 11</div>
+    <h3>Juliet 11</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 12 -->
+<article class="card" data-id="juliet-12" data-nome="Juliet 12" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG11.jpg" alt="Óculos Juliet 12" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 12</div>
+    <h3>Juliet 12</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 13 -->
+<article class="card" data-id="juliet-13" data-nome="Juliet 13" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG12.jpg" alt="Óculos Juliet 13" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 13</div>
+    <h3>Juliet 13</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 14 -->
+<article class="card" data-id="juliet-14" data-nome="Juliet 14" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG13.jpg" alt="Óculos Juliet 14" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 14</div>
+    <h3>Juliet 14</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 15 -->
+<article class="card" data-id="juliet-15" data-nome="Juliet 15" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG14.jpg" alt="Óculos Juliet 15" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 15</div>
+    <h3>Juliet 15</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 16 -->
+<article class="card" data-id="juliet-16" data-nome="Juliet 16" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG18.jpg" alt="Óculos Juliet 16" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 16</div>
+    <h3>Juliet 16</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 17 -->
+<article class="card" data-id="juliet-17" data-nome="Juliet 19" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG17.jpg" alt="Óculos Juliet 17" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 17</div>
+    <h3>Juliet 17</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 18 -->
+<article class="card" data-id="juliet-18" data-nome="Juliet 18" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG20.jpg" alt="Óculos Juliet 18" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 18</div>
+    <h3>Juliet 18</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 19 -->
+<article class="card" data-id="juliet-19" data-nome="Juliet 19" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG21.jpg" alt="Óculos Juliet 19" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 19</div>
+    <h3>Juliet 19</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet 20 -->
+<article class="card" data-id="juliet-20" data-nome="Juliet 20" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/juliet-01/JULIETE.JPG22.jpg" alt="Óculos Juliet 20" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet 20</div>
+    <h3>Juliet 20</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+
+</div>
+</section>
+
+<!-- ########## SEÇÃO PLANTARIS: 2 espaços ########## -->
+<section class="cat" id="plantaris">
+<div class="sh"><h2>Plantaris</h2><span>2 espaços</span></div>
+<div class="grid">
+
+<!-- Produto: Juliet Plantaris 01 -->
+<article class="card" data-id="plantaris-01" data-nome="Juliet Plantaris 01" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/Plantaris/plantaris1.jpg.jpg" alt="Óculos Juliet Plantaris 01" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet Plantaris 01</div>
+    <h3>Juliet Plantaris 01</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Juliet Plantaris 02 -->
+<article class="card" data-id="plantaris-02" data-nome="Juliet Plantaris 02" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/Plantaris/plantaris2.jpg.jpg" alt="Óculos Juliet Plantaris 02" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Juliet Plantaris 02</div>
+    <h3>Juliet Plantaris 02</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+</div>
+</section>
+
+<!-- ########## SEÇÃO RADAR: 19 espaços ########## -->
+<section class="cat" id="radar">
+<div class="sh"><h2>Radar</h2><span>19 espaços</span></div>
+<div class="grid">
+
+<!-- Produto: Radar 01 -->
+<article class="card" data-id="radar-01" data-nome="Radar 01" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR1.jpg" alt="Óculos Radar 01" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 01</div>
+    <h3>Radar 01</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 02 -->
+<article class="card" data-id="radar-02" data-nome="Radar 02" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR2.jpg" alt="Óculos Radar 02" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 02</div>
+    <h3>Radar 02</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 03 -->
+<article class="card" data-id="radar-03" data-nome="Radar 03" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR3.jpg" alt="Óculos Radar 03" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 03</div>
+    <h3>Radar 03</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 04 -->
+<article class="card" data-id="radar-04" data-nome="Radar 04" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR4.jpg" alt="Óculos Radar 04" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 04</div>
+    <h3>Radar 04</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 05 -->
+<article class="card" data-id="radar-05" data-nome="Radar 05" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR5.jpg" alt="Óculos Radar 05" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 05</div>
+    <h3>Radar 05</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 06 -->
+<article class="card" data-id="radar-06" data-nome="Radar 06" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR6.jpg" alt="Óculos Radar 06" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 06</div>
+    <h3>Radar 06</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 07 -->
+<article class="card" data-id="radar-07" data-nome="Radar 07" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR7.jpg" alt="Óculos Radar 07" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 07</div>
+    <h3>Radar 07</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 08 -->
+<article class="card" data-id="radar-08" data-nome="Radar 08" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR8.jpg" alt="Óculos Radar 08" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 08</div>
+    <h3>Radar 08</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 09 -->
+<article class="card" data-id="radar-09" data-nome="Radar 09" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR9.jpg" alt="Óculos Radar 09" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 09</div>
+    <h3>Radar 09</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 10 -->
+<article class="card" data-id="radar-10" data-nome="Radar 10" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR10.jpg" alt="Óculos Radar 10" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 10</div>
+    <h3>Radar 10</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 11 -->
+<article class="card" data-id="radar-11" data-nome="Radar 11" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR11.JPG.jpg" alt="Óculos Radar 11" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 11</div>
+    <h3>Radar 11</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 12 -->
+<article class="card" data-id="radar-12" data-nome="Radar 12" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR12.JPG.jpg" alt="Óculos Radar 12" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 12</div>
+    <h3>Radar 12</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 13 -->
+<article class="card" data-id="radar-13" data-nome="Radar 13" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR13.JPG" alt="Óculos Radar 13" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 13</div>
+    <h3>Radar 13</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 14 -->
+<article class="card" data-id="radar-14" data-nome="Radar 14" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR14.JPG" alt="Óculos Radar 14" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 14</div>
+    <h3>Radar 14</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 15 -->
+<article class="card" data-id="radar-15" data-nome="Radar 15" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR15.JPG" alt="Óculos Radar 15" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 15</div>
+    <h3>Radar 15</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 16 -->
+<article class="card" data-id="radar-16" data-nome="Radar 16" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR16.JPG" alt="Óculos Radar 16" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 16</div>
+    <h3>Radar 16</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 17 -->
+<article class="card" data-id="radar-17" data-nome="Radar 17" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR17.JPG" alt="Óculos Radar 17" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 17</div>
+    <h3>Radar 17</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 18 -->
+<article class="card" data-id="radar-18" data-nome="Radar 18" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR18.JPG" alt="Óculos Radar 18" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 18</div>
+    <h3>Radar 18</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+<!-- Produto: Radar 19 -->
+<article class="card" data-id="radar-19" data-nome="Radar 19" data-cor="Preto" data-estoque="sim">
+  <div class="ph"><img src="fotos/RADAR/RADAR19.JPG" alt="Óculos Radar 19" loading="lazy"></div>
+  <div class="cb">
+    <div class="mod">Modelo Radar 19</div>
+    <h3>Radar 19</h3>
+    <div class="pr">R$100,00</div>
+    <div class="av"></div>
+    <div class="cor"></div>
+    <div class="acts"><button class="btn add" type="button">Adicionar ao carrinho</button></div>
+  </div>
+</article>
+
+</div>
+</section>
+
+</div>
+
+<!-- ================= INFORMAÇÕES DA LOJA E AVALIAÇÕES ================= -->
+<section class="info" id="loja"><div class="wrap cols">
+<div>
+<h2>Nossa loja</h2>
+<!-- Endereço da loja -->
+<address><b>Endereço</b><br>Avenida 24 de Outubro com a Benjamin Constant.<br>Edifício Chater, Sala 208<br>Sob a loja Enxovais Paulista, segundo andar.</address>
+<div class="links">
+<!-- Link do WhatsApp (o endereço é preenchido pelo script.js a partir do número) -->
+<a class="btn" id="waLink" target="_blank" rel="noopener">WhatsApp (62) 98626-6467</a>
+<!-- Link do Instagram -->
+<a class="btn ghost" href="https://www.instagram.com/mm_imports28" target="_blank" rel="noopener">Instagram @mm_imports28</a>
+</div>
+<!-- Nome do proprietário, abaixo do Instagram -->
+<p class="owner"><span>Proprietário</span>Eduardo Rodrigues</p>
+</div>
+
+<div>
+<h2>Avaliações</h2>
+<!-- Nota geral da loja -->
+<div class="rate"><b>4,8</b><span> avaliações</span></div>
+<!-- Avaliações reais de clientes (sem datas) -->
+<div class="rv"><strong>Veronica Vieira Gomes</strong><small>5 avaliações, 5 fotos</small><p>Melhor loja, só comprou óculos para meu marido. Atendimento excelente... Parabéns.</p></div>
+<div class="rv"><strong>Peter Montanaro</strong><small>Local Guide, 25 avaliações, 24 fotos</small><p>Excelente!!! 100%</p></div>
+<div class="rv"><strong>José Claudio Ferreira</strong><small>4 avaliações</small><p>Muito Bom</p></div>
+</div>
+</div></section>
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer><div class="wrap">MM Imports. Avenida 24 de Outubro com a Benjamin Constant, Edifício Chater, Sala 208, Goiânia. Os preços e a disponibilidade são confirmados no atendimento.</div></footer>
+
+<!-- ================= ABA DE FEEDBACKS (canto direito da tela) ================= -->
+<button class="fbtab" id="fbTab" aria-label="Abrir feedbacks dos clientes">Feedbacks</button>
+
+<!-- Fundo escuro que aparece atrás do carrinho/feedbacks; clicar nele fecha o painel -->
+<div class="ov" id="ov"></div>
+
+<!-- ================= PAINEL DO CARRINHO ================= -->
+<aside class="dr" id="dr" aria-label="Carrinho">
+<div class="dh"><h2>Seu pedido</h2><button class="ib" id="closeCart" aria-label="Fechar carrinho"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<!-- Lista de itens (preenchida pelo script.js) -->
+<div class="dl" id="dl"></div>
+<div class="df">
+<!-- Valor total (calculado pelo script.js) -->
+<div class="tot"><span>Total</span><b id="tot">R$ 0,00</b></div>
+<!-- Abre o WhatsApp com o pedido pronto -->
+<button class="btn" id="fin">Finalizar compra</button>
+<!-- Remove todos os itens -->
+<button class="btn ghost" id="clr">Esvaziar carrinho</button>
+<p class="note">Ao finalizar, o WhatsApp abre com o pedido pronto: produtos, quantidades, cores, fotos e valores. O pedido só é enviado quando você confirmar o envio lá.</p>
+</div>
+</aside>
+
+<!-- ================= PAINEL DE FEEDBACKS ================= -->
+<aside class="dr" id="fb" aria-label="Feedbacks dos clientes">
+<div class="dh"><h2>Feedbacks</h2><button class="ib" id="closeFb" aria-label="Fechar feedbacks"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="dl">
+<!-- Formulário para o cliente deixar o feedback -->
+<form id="fbForm" autocomplete="off">
+<label for="fbNome">Seu nome</label>
+<input id="fbNome" maxlength="60" required>
+<label for="fbNota">Nota</label>
+<select id="fbNota"><option value="5">5 de 5</option><option value="4">4 de 5</option><option value="3">3 de 5</option><option value="2">2 de 5</option><option value="1">1 de 5</option></select>
+<label for="fbMsg">Seu feedback</label>
+<textarea id="fbMsg" rows="4" maxlength="500" required></textarea>
+<div class="acts">
+<!-- Publicar: guarda o feedback neste aparelho -->
+<button class="btn" type="submit">Publicar</button>
+<!-- Enviar por WhatsApp: manda o feedback ao proprietário -->
+<button class="btn ghost" type="button" id="fbWa">Enviar por WhatsApp</button>
+</div>
+<p class="note">Publicar guarda o feedback neste dispositivo. Para o proprietário receber, use o envio por WhatsApp.</p>
+</form>
+<!-- Lista de feedbacks publicados (preenchida pelo script.js) -->
+<div id="fbList"></div>
+</div>
+</aside>
+
+<!-- Liga o arquivo de funcionamento do site (deve ficar por último) -->
+<script src="script.js"></script>
+</body>
+</html>

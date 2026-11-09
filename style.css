@@ -1,0 +1,193 @@
+/* =====================================================================
+   MM IMPORTS - VISUAL DO SITE (style.css)
+   Aqui ficam cores, tamanhos, espaçamentos e responsividade.
+   ===================================================================== */
+
+/* ---------- CORES E CONFIGURAÇÕES GERAIS ----------
+   Para trocar uma cor do site inteiro, altere aqui. */
+:root{
+  --bg:#080808;      /* fundo principal (preto) */
+  --bg2:#151515;     /* fundo dos cards e painéis */
+  --gold:#C9A44C;    /* dourado principal */
+  --gold2:#E0C078;   /* dourado claro (ao passar o mouse) */
+  --tx:#fff;         /* texto principal */
+  --tx2:#B8B8B8;     /* texto secundário (cinza) */
+  --bd:#303030;      /* bordas */
+  color-scheme:dark;
+  box-sizing:border-box;
+  /* Margens de segurança para celulares com notch */
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+/* Ao clicar num link do menu, a página rola suave e para abaixo do cabeçalho */
+html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));scroll-behavior:smooth;height:100%}
+*,*::before,*::after{box-sizing:border-box}
+/* Corpo do site: fundo preto, texto branco, fonte Inter */
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 Inter,system-ui,Arial,sans-serif}
+/* Títulos usam a fonte elegante Cormorant Garamond */
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;margin:0;font-weight:600}
+a{color:inherit}
+/* Largura máxima do conteúdo (centralizado) */
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* ---------- BOTÕES ---------- */
+/* Botão dourado padrão (retangular, cantos discretos) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:4px;border:1px solid var(--gold);background:var(--gold);color:#080808;font:600 14px Inter,sans-serif;cursor:pointer;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.btn:hover{background:var(--gold2)}
+/* Botão "vazado": só contorno dourado */
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.ghost:hover{background:rgba(201,164,76,.12)}
+/* Botão desativado (cinza apagado) */
+.btn:disabled{opacity:.45;cursor:not-allowed}
+/* Contorno dourado ao navegar com o teclado (acessibilidade) */
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+/* Ícones SVG (carrinho, menu, fechar) */
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- CABEÇALHO ---------- */
+/* Fica fixo no topo com linha dourada embaixo */
+header{position:sticky;top:0;z-index:20;background:rgba(8,8,8,.96);border-bottom:1px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+/* Nome MM IMPORTS */
+.brand{font:700 28px "Cormorant Garamond",serif;color:var(--gold);text-decoration:none;letter-spacing:.08em}
+/* Menu de navegação (computador) */
+nav{display:flex;gap:26px}
+nav a{text-decoration:none;color:var(--tx2);font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--gold);border-color:var(--gold)}
+.tools{display:flex;gap:8px}
+/* Botões quadrados de ícone (carrinho, menu, fechar) */
+.ib{position:relative;background:none;border:1px solid var(--bd);color:var(--tx);width:44px;height:44px;border-radius:4px;display:grid;place-items:center;cursor:pointer}
+.ib:hover{border-color:var(--gold);color:var(--gold)}
+/* Número de itens sobre o ícone do carrinho */
+.cnt{position:absolute;top:-7px;right:-7px;min-width:20px;height:20px;padding:0 5px;background:var(--gold);color:#080808;font:600 12px/20px Inter,sans-serif;border-radius:4px;text-align:center}
+/* Botão do menu fica escondido no computador */
+#menuBtn{display:none}
+
+/* ---------- ÁREA INICIAL ---------- */
+.hero{padding:88px 0 72px;background:linear-gradient(180deg,#0e0e0e,var(--bg));border-bottom:1px solid var(--bd)}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.05;max-width:760px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--tx2);max-width:560px;margin:20px 0 32px;font-size:18px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- CATÁLOGO ---------- */
+/* Cada seção (Juliet, Plantaris, Radar) */
+section.cat{padding:64px 0 8px}
+/* Título da seção com linha embaixo */
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--bd);padding-bottom:14px;margin-bottom:28px}
+.sh h2{font-size:38px;color:var(--gold)}
+.sh span{color:var(--tx2);font-size:14px}
+/* Grade de produtos: 4 por fileira (computador) */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+/* Card de produto */
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.45);overflow:hidden}
+.card:hover{border-color:var(--gold)}
+/* Área da fotografia (proporção 4:3) */
+.ph{aspect-ratio:4/3;background:#0d0d0d;border-bottom:1px solid var(--bd);display:grid;place-items:center;color:#555;text-align:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:10px}
+/* Foto sem distorção */
+.ph img{width:100%;height:100%;object-fit:contain;display:block}
+/* Ícone de óculos do espaço vazio */
+.ph svg{width:56px;height:56px;stroke:#3a3a3a;fill:none;stroke-width:1.4;display:block;margin:0 auto 6px}
+/* Textos do card */
+.cb{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.mod{font-size:11px;letter-spacing:.14em;color:var(--tx2);text-transform:uppercase}
+.card h3{font-size:22px;line-height:1.15}
+.card p{margin:0;color:var(--tx2);font-size:13px;flex:1}
+/* Preço em dourado */
+.pr{font:600 20px Inter,sans-serif;color:var(--gold);margin-top:6px}
+/* "Preço sob consulta" fica menor e cinza */
+.pr.no{font-size:14px;color:var(--tx2);font-weight:500}
+/* Disponibilidade (verde quando disponível) */
+.av{font-size:12px;color:var(--tx2)}
+.av.on{color:#9bc89b}
+/* Linha da cor do produto */
+.cor{font-size:13px;color:var(--tx2);margin-top:4px}
+/* Seletor de cor (aparece só se o produto tiver mais de uma cor) */
+select.cor{width:100%;background:#0d0d0d;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:8px 10px;font:400 13px Inter,sans-serif}
+select.cor:focus{border-color:var(--gold)}
+/* Botões do card: "Ver" pequeno e "Adicionar ao carrinho" ocupando o resto */
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.acts .btn{padding:10px 8px;font-size:12px}
+.card .acts{grid-template-columns:1fr}  /* só o botão "Adicionar ao carrinho" */
+
+/* ---------- INFORMAÇÕES DA LOJA E AVALIAÇÕES ---------- */
+.info{padding:72px 0 40px}
+/* Duas colunas: loja à esquerda, avaliações à direita */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.info h2{font-size:38px;color:var(--gold);margin-bottom:18px}
+.info address{font-style:normal;color:var(--tx2);margin-bottom:20px}
+.info address b{color:var(--tx);font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap}
+/* Nome do proprietário */
+.owner{margin:22px 0 0;font:600 22px "Cormorant Garamond",Georgia,serif}
+.owner span{display:block;font:500 11px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2)}
+/* Nota 4,8 */
+.rate{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+.rate b{font:600 52px "Cormorant Garamond",serif;color:var(--gold)}
+.rate span{color:var(--tx2);font-size:14px}
+/* Caixa de cada avaliação/feedback */
+.rv{border:1px solid var(--bd);background:var(--bg2);border-radius:6px;padding:16px;margin-bottom:12px}
+.rv strong{display:block}
+.rv small{color:var(--tx2)}
+.rv p{margin:8px 0 0;color:var(--tx2)}
+
+/* ---------- RODAPÉ ---------- */
+footer{border-top:1px solid var(--gold);padding:28px 0;color:var(--tx2);font-size:13px;margin-top:40px}
+
+/* ---------- ABA DE FEEDBACKS (canto direito) ---------- */
+/* Aba vertical fixa no meio da lateral direita */
+.fbtab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:30;writing-mode:vertical-rl;background:var(--gold);color:#080808;border:1px solid var(--gold);border-right:0;border-radius:4px 0 0 4px;padding:18px 10px;font:600 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.fbtab:hover{background:var(--gold2)}
+
+/* ---------- PAINÉIS LATERAIS (carrinho e feedbacks) ---------- */
+/* Fundo escuro atrás do painel */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:40;display:none}
+.ov.on{display:block}
+/* Painel que desliza da direita; .on = aberto */
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg2);border-left:1px solid var(--gold);z-index:50;display:none;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.dr.on{display:flex}
+/* Topo do painel (título e botão fechar) */
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--bd)}
+.dh h2{font-size:28px;color:var(--gold)}
+/* Área rolável do painel */
+.dl{flex:1;overflow:auto;padding:12px 20px}
+/* Item do carrinho */
+.it{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:14px 0;border-bottom:1px solid var(--bd)}
+.it b{font-weight:600}
+.it small{display:block;color:var(--tx2);font-size:12px}
+/* Botões - e + e Remover */
+.it .q{display:flex;align-items:center;gap:6px;grid-column:1/3}
+.q button{width:32px;height:32px;background:#0d0d0d;border:1px solid var(--bd);color:var(--tx);border-radius:4px;cursor:pointer}
+.q button:hover{border-color:var(--gold)}
+.q .rm{width:auto;padding:0 10px;margin-left:auto;font-size:12px;color:var(--tx2)}
+/* Rodapé do carrinho (total e botões) */
+.df{padding:18px 20px;border-top:1px solid var(--bd);display:grid;gap:10px}
+.tot{display:flex;justify-content:space-between;font-size:18px}
+.tot b{color:var(--gold)}
+.note{font-size:12px;color:var(--tx2);margin:0}
+.empty{color:var(--tx2);text-align:center;padding:40px 0}
+
+/* ---------- FORMULÁRIO DE FEEDBACK ---------- */
+form label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx2);margin:14px 0 6px}
+form input,form select,form textarea{width:100%;background:#0d0d0d;color:var(--tx);border:1px solid var(--bd);border-radius:4px;padding:10px 12px;font:400 15px Inter,sans-serif}
+form input:focus,form select:focus,form textarea:focus{border-color:var(--gold)}
+form .acts{margin:16px 0 10px}
+#fbList{margin-top:20px;border-top:1px solid var(--bd);padding-top:12px}
+#fbList .rv{background:#0d0d0d}
+
+/* ---------- RESPONSIVIDADE (celular e tablet) ---------- */
+/* Tablet: 2 produtos por fileira e informações em 1 coluna */
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
+/* Celular: menu vira botão e abre em lista */
+@media(max-width:760px){
+  #menuBtn{display:grid}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--gold);flex-direction:column;gap:0;padding:8px 20px}
+  nav.on{display:flex}
+  nav a{padding:14px 0;border-bottom:1px solid var(--bd)}
+  .hero{padding:56px 0 48px}
+}
+/* Celular pequeno: 1 produto por linha */
+@media(max-width:460px){.grid{grid-template-columns:1fr}.sh{flex-direction:column}}
+
+/* Produto com a palavra "hidden" no HTML fica escondido */
+.card[hidden]{display:none}
